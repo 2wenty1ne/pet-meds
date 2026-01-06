@@ -1,0 +1,30 @@
+{
+    "pet": [
+        {
+            "name": "carlotta",
+            "titleName": "Carlottas",
+            "dayParts": [
+                {
+                    "part": "Morgens",
+                    "medication": [
+                        {
+                            "id": "1",
+                            "name": "Medikament 1",
+                            "description": "35mg über Spritze"
+                        }
+                    ]
+                },
+                {
+                    "part": "Abends",
+                    "medication": [
+                        {
+                            "id": "2",
+                            "name": "Medikament 1",
+                            "description": "35mg über Spritze, kleine blaue Flasche"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
