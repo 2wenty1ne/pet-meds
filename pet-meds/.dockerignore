@@ -1,0 +1,7 @@
+node_modules
+dist
+my.db
+my.db-journal
+.env
+Server/tmp
+template.json

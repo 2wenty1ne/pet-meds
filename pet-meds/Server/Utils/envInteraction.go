@@ -12,7 +12,7 @@ import (
 func init() {
 	err := godotenv.Load("./../.env")
 	if err != nil {
-		log.Fatal(err)
+		log.Println("No .env file found (this is normal in production)")
 	}
 }
 
@@ -42,7 +42,6 @@ func readEnvValue(key string, defaultString string, causeCrashPar ...bool) strin
 	}
 
 	value := os.Getenv(key)
-
 	if value != "" {
 		return value
 	}

@@ -23,6 +23,7 @@ function App() {
 
   //? WEBSOCKET
   useEffect(() => {
+    console.log("Connectig to " + `ws://${ip}:${port}/api/v1/ws`)
     const ws = new WebSocket(`ws://${ip}:${port}/api/v1/ws`)
 
     ws.onopen = () => {

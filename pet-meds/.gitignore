@@ -13,6 +13,7 @@ dist-ssr
 *.local
 
 my.db
+template.json
 my.db-journal
 .env
 Server/tmp
