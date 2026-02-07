@@ -9,8 +9,8 @@
                     "medication": [
                         {
                             "id": "1",
-                            "name": "Medikament 1",
-                            "description": "35mg über Spritze"
+                            "name": "Thyronorm",
+                            "description": "2,5 mg über Spritze in den Mund"
                         }
                     ]
                 },
@@ -19,8 +19,8 @@
                     "medication": [
                         {
                             "id": "2",
-                            "name": "Medikament 1",
-                            "description": "35mg über Spritze, kleine blaue Flasche"
+                            "name": "Thyronorm",
+                            "description": "2,5 mg über Spritze in den Mund"
                         }
                     ]
                 }

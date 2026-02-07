@@ -8,9 +8,6 @@ import { useNameStore } from './store';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const ip = import.meta.env.VITE_WEBSERVER_IP
-  const port = import.meta.env.VITE_WEBSERVER_PORT
-
   const queryClient = useQueryClient();
 
   const [selectedDate, setSelectedDate] = useState(new Date())
@@ -23,8 +20,8 @@ function App() {
 
   //? WEBSOCKET
   useEffect(() => {
-    console.log("Connectig to " + `ws://${ip}:${port}/api/v1/ws`)
-    const ws = new WebSocket(`ws://${ip}:${port}/api/v1/ws`)
+    console.log("Connectig to " + `ws://${window.location.host}/api/v1/ws`)
+    const ws = new WebSocket(`ws://${window.location.host}/api/v1/ws`);
 
     ws.onopen = () => {
       console.log("Websocket connected")

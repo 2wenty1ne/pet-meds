@@ -1,13 +1,8 @@
 export async function sendRequest(methode: string, objectToSend: object, route: string, parameter?: string) {
     try {
-        //TODO Get from .env
-        const ip = import.meta.env.VITE_WEBSERVER_IP
-        const port = import.meta.env.VITE_WEBSERVER_PORT
-
-        const urlWithoutRoute = `http://${ip}:${port}`
+        const urlWithoutRoute = `${window.location.protocol}//${window.location.host}`;
 
         const version = "api/v1"
-
         var url = `${urlWithoutRoute}/${version}/${route}`
 
         const request: RequestInit = {
