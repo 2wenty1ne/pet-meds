@@ -1,8 +1,6 @@
 # Hosting
 Docker-compose to host
 ```Dockerfile
-version: '3.8'
-
 services:
   frontend:
     image: 2wenty1ne/pet-meds-frontend:1.0
@@ -30,8 +28,6 @@ volumes:
 # Dev
 Dev version of the docker-compose file
 ```Dockerfile
-version: '3.8'
-
 services:
   frontend:
     image: 2wenty1ne/pet-meds-frontend:1.0
