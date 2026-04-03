@@ -33,14 +33,14 @@ Paste the following into `docker-compose.yml`:
 ```yaml
 services:
   frontend:
-    image: 2wenty1ne/pet-meds-frontend:1.0
+    image: 2wenty1ne/pet-meds-frontend:latest
     container_name: pet-meds-frontend
     volumes:
       - static-files:/app/Frontend/dist
     restart: "no"
 
   backend:
-    image: 2wenty1ne/pet-meds-server:1.0
+    image: 2wenty1ne/pet-meds-server:latest
     container_name: pet-meds-server
     volumes:
       - static-files:/app/Server/dist:ro
@@ -58,7 +58,7 @@ volumes:
 **3. (Optional) Change the port**  
 ```yaml
 backend:
-  image: 2wenty1ne/pet-meds-server:1.0
+  image: 2wenty1ne/pet-meds-server:latest
   container_name: pet-meds-server
   volumes:
     - static-files:/app/Server/dist:ro
