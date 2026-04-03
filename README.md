@@ -45,7 +45,7 @@ services:
     volumes:
       - static-files:/app/Server/dist:ro
       - sqlite-data:/app/Server/db
-      - ./Server/template.json:/app/Server/template.json:ro
+      - ./template.json:/app/Server/template.json:ro
     ports:
       - 80:80
     depends_on:
@@ -66,7 +66,7 @@ backend:
   volumes:
     - static-files:/app/Server/dist:ro
     - sqlite-data:/app/Server/db
-    - ./Server/template.json:/app/Server/template.json:ro
+    - ./template.json:/app/Server/template.json:ro
   ports:
     - 8080:80  # Change 8080 to your desired port
   depends_on:
