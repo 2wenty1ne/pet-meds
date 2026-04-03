@@ -79,13 +79,43 @@ Then access the application at:
 - **Different machine:** http://your-server-ip:8080  
 
 
-**4. Start the application**  
+**4. Create template**  
+The server requires a `template.json` file to define pet medications. The file must be valid JSON and follow the structure below.  
+```bash
+nano template.json
+```  
+
+Example file:
+```json
+{
+  "pet": [
+    {
+      "name": "carlotta",
+      "titleName": "Carlottas",
+      "dayParts": [
+        {
+          "part": "Morgens",
+          "medication": [
+            {
+              "id": "1",
+              "name": "Thyronorm",
+              "description": "2,5 mg über Spritze in den Mund"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+**5. Start the application**  
 Run the following command in the same directory:
 ```bash
 docker compose up -d
 ```
 
-**5. Access the application**  
+**6. Access the application**  
 Open your browser and navigate to:
 - **Same machine:** http://localhost
 - **Different machine on same network:** http://your-server-ip    
@@ -113,35 +143,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 # Dev
-Dev version of the docker-compose file
+Dev version of the docker-compose file is the one provided in the repos code.  
 - add .env file for frontend and server
-```Dockerfile
-services:
-  frontend:
-    image: 2wenty1ne/pet-meds-frontend:1.0
-    container_name: pet-meds-frontend
-    build:
-      context: ./Frontend
-      dockerfile: Dockerfile
-    volumes:
-      - static-files:/app/Frontend/dist
-    restart: "no"
 
-  backend:
-    image: 2wenty1ne/pet-meds-server:1.0
-    container_name: pet-meds-server
-    build:
-      context: ./Server
-      dockerfile: Dockerfile
-    volumes:
-      - static-files:/app/Server/dist:ro
-      - sqlite-data:/app/Server/db
-    ports:
-      - 80:80
-    depends_on:
-      - frontend
-
-volumes:
-  static-files:
-  sqlite-data:
-```
+The dev version uses a template file located in the `Server`, not one in root. 

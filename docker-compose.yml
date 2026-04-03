@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: 2wenty1ne/pet-meds-frontend:1.0
+    image: 2wenty1ne/pet-meds-frontend:1.1
     container_name: pet-meds-frontend
     build:
       context: ./Frontend
@@ -10,7 +10,7 @@ services:
     restart: "no"
 
   backend:
-    image: 2wenty1ne/pet-meds-server:1.0
+    image: 2wenty1ne/pet-meds-server:1.1
     container_name: pet-meds-server
     build:
       context: ./Server
@@ -18,10 +18,13 @@ services:
     volumes:
       - static-files:/app/Server/dist:ro
       - sqlite-data:/app/Server/db
+      - ./Server/template.json:/app/Server/template.json:ro
     ports:
       - 80:80
     depends_on:
       - frontend
+    command: >
+      sh -c "/app/Server/validateJson /app/Server/template.json && ./server"
 
 volumes:
   static-files:
