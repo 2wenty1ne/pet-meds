@@ -51,13 +51,7 @@ services:
     depends_on:
       - frontend
     command: >
-      sh -c "
-      if [ ! -f ./template.json ]; then
-        echo '❌ ERROR: ./template.json not found in root directory.';
-        exit 1;
-      fi;
-      /app/Server/validateJson /app/Server/template.json && ./server
-      "
+      sh -c "/app/Server/validateJson /app/Server/template.json && ./server"
 
 volumes:
   static-files:
