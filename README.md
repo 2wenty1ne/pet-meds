@@ -45,10 +45,13 @@ services:
     volumes:
       - static-files:/app/Server/dist:ro
       - sqlite-data:/app/Server/db
+      - ./Server/template.json:/app/Server/template.json:ro
     ports:
       - 80:80
     depends_on:
       - frontend
+    command: >
+      sh -c "/app/Server/validateJson /app/Server/template.json && ./server"
 
 volumes:
   static-files:
@@ -63,10 +66,13 @@ backend:
   volumes:
     - static-files:/app/Server/dist:ro
     - sqlite-data:/app/Server/db
+    - ./Server/template.json:/app/Server/template.json:ro
   ports:
     - 8080:80  # Change 8080 to your desired port
   depends_on:
     - frontend
+  command: >
+    sh -c "/app/Server/validateJson /app/Server/template.json && ./server"
 ```  
 Then access the application at:
 - **Same machine:** http://localhost:8080
